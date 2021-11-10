@@ -1,0 +1,34 @@
+button {
+    width: 220px;
+    height: 43px;
+
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #e5e5e5;
+
+    transition: all 0.7s;
+    background: #ff2400;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media (max-width: 500px) {
+        width: 180px;
+    }
+
+    span {
+        color: #fff;
+
+        @media (max-width: 500px) {
+            font-size: 0.9rem;
+        }
+    }
+
+    &:hover {
+        filter: brightness(0.7);
+    }
+    
+}

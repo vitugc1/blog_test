@@ -1,0 +1,47 @@
+.form-info {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    input {
+        width: 500px;
+        height: 30px;
+        border: 1px solid #ccc;;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+    .image-info {
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+    } 
+    
+    textarea {
+        width: 500px;
+        height: 100px;
+        border: 1px solid #ccc;;
+        margin-top: 20px;
+        border-radius: 5px;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+    button {
+        width: 300px;
+        height: 30px;
+        border: 1px solid #ccc;;
+        margin-top: 20px;
+        border-radius: 5px;
+        background-color: #005eff;
+        color: #fff;
+    }
+
+
+}
