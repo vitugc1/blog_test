@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom';
 
 import { CardPost } from '../../components/CardPost/CardPost'
 import { Header } from '../../components/Header/Header'
@@ -5,6 +6,8 @@ import { Header } from '../../components/Header/Header'
 import './Home.scss'
 
 export const Home = () => {
+    const history = useHistory();
+
     const result = [
         {
             id: 1,
@@ -32,6 +35,10 @@ export const Home = () => {
         }
     ]
 
+    function navigationToDetails(){
+        history.push('/DetailsPost');
+    }
+
     return (
         <div className="Container-Home">
             <Header
@@ -40,6 +47,7 @@ export const Home = () => {
             <div className="Posts">
             {result.map(item => (
                 <div 
+                    onClick={navigationToDetails}
                     className="Post"
                     key={item.id}   
                 >

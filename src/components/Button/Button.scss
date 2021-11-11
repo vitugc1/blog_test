@@ -1,4 +1,4 @@
-button {
+.Button {
     width: 220px;
     height: 43px;
 
@@ -8,6 +8,7 @@ button {
 
     transition: all 0.7s;
     background: #ff2400;
+    color: #fff;
     cursor: pointer;
 
     display: flex;
@@ -15,20 +16,10 @@ button {
     align-items: center;
     gap: 1.5rem;
 
-    @media (max-width: 500px) {
-        width: 180px;
-    }
-
-    span {
-        color: #fff;
-
-        @media (max-width: 500px) {
-            font-size: 0.9rem;
-        }
-    }
-
     &:hover {
         filter: brightness(0.7);
     }
-    
+    @media (max-width: 500px) {
+        width: 180px;
+    }
 }

@@ -1,9 +1,24 @@
-import React from 'react'
+import { useHistory } from 'react-router-dom';
+
 import { Button } from '../../components/Button/Button';
+import googleIcon from '../../assets/google-icon.svg';
+import { useAuth } from '../../hooks/useAuth';
 
 import './Signin.scss'
 
+
 export const Signin = () => {
+    const history = useHistory();
+    const { user, signInWithGoogle } = useAuth();
+
+    async function handleNavigationToHome() {
+        if(!user){
+            await signInWithGoogle();
+        }
+
+        history.push('/Home');
+    }
+
     return (
         <section>
             <main>
@@ -12,8 +27,12 @@ export const Signin = () => {
                 </div>
                 <div className="button">
                     <Button
-                        title="signin up"
-                    />
+                        type="submit"
+                        onClick={handleNavigationToHome}
+                    >
+                        <img src={googleIcon} alt="" />
+                        Signin up
+                    </Button>
                 </div>
            </main>
         </section>

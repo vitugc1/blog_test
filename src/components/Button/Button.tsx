@@ -1,17 +1,12 @@
-import googleIconImg from '../../assets/google-icon.svg';
+import { ButtonHTMLAttributes } from 'react';
 
 import './Button.scss'
 
-type Props = {
-    title: string;
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ title }: Props) => {
+export const Button = (props: ButtonProps) => {
     return (
-        <button type="submit">
-            <img src={googleIconImg} alt="logo do google" />
-            <span>{title}</span>
-        </button>
+        <button className="Button" {...props} />
     )
 }
 

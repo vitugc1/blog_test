@@ -1,4 +1,4 @@
-import React from 'react';
+import { useAuth } from '../../hooks/useAuth';
 import { Avatar } from '../Avatar/Avatar';
 import './Header.scss';
 
@@ -7,10 +7,12 @@ type Props = {
 }
 
 export const Header = ({ isChecked }:Props) => {
+    const { user } = useAuth();
+ 
     return (
         <div className="container">
             <Avatar
-                urlImage="https://github.com/vitugc1.png"
+                urlImage={user?.avatar}
             />
             <div />
             <div>
