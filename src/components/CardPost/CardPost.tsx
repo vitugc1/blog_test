@@ -10,20 +10,20 @@ type Props = {
 export const CardPost = ({ urlImage, date, title, description}: Props) => {
     return (
         <div className="Card">
-            <a  href="/DetailsPost">
-                <div>
-                    <img src={urlImage} alt="" />
+            <div className="Card-content">
+                <div className="Card-image">
+                        <img src={urlImage} alt="" />
                 </div>
-                <div>
-                    <h3>{date}</h3>
-                </div>
-                <div>
+                <div className="Card-title">
                     <span>{title}</span>
                 </div>
-                <div>
+                <div className="Card-description">
                     <p>{description}</p>
                 </div>
-            </a>
+                <div className="Card-date">
+                    <h3>{date}</h3>
+                </div>
+            </div>
         </div>
     )
 }

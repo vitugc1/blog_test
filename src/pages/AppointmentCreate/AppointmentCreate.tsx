@@ -17,14 +17,14 @@ export const AppointmentCreate = () => {
 
         const postRef = database.ref('posts');
 
-        const result = await postRef.push({
+        await postRef.push({
             title: title,
             date: date,
             image: image,
             description: description
         });
         
-        history.push(`/home/${result}`);
+        history.push(`/home`);
     }
 
     return (
@@ -37,29 +37,41 @@ export const AppointmentCreate = () => {
                     onSubmit={handleCreatePost}
                     
                 >
+                    
                     <input 
                         type="text" 
                         placeholder="Digite o titulo do post"
                         onChange={event => settitle(event.target.value)}
                         value={title}
                     />
+                    
+                    
+                    
                     <input 
-                        type="date"
-                        onChange={event => setDate(event.target.value)}
-                        value={date}
-                    />
-                    <input 
-                        className="image-info" 
+                        
                         type="url" 
                         placeholder="Digite URL da imagem" 
                         onChange={event => setImage(event.target.value)}
                         value={image}
                     />
+                    <div className="input-date">
+                        <input 
+                            type="date"
+                            onChange={event => setDate(event.target.value)}
+                            value={date}
+                        />
+                    </div>
+                    
                     <textarea
                         onChange={event => setDescription(event.target.value)}
                         value={description}
                     />
-                    <button type="submit">Create new post</button>
+                    
+
+                    <button type="submit">
+                        Create new post
+                    </button>
+
                 </form>
             </div>
         </div>

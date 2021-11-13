@@ -16,8 +16,9 @@ export const Header = ({ isChecked }:Props) => {
             />
             <div />
             <div>
-               { isChecked ? <a href="/home">Home</a> : '' }
+               { isChecked ? <a href="/home">Home</a> : <a href="/createpost">Create New Post</a> }
             </div>
+
         </div>
     )
 }

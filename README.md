@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+## 💻 Projeto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Blog page de e-sports com intuído de informar tudo que acontece no
+mundo dos jogo eletrônicos.
 
-## Available Scripts
+## Features 
+-   [ ] Autenticação com servidor do Firebase.
+-   [ ] Listas de jogos e campeonatos do mundo todo;
+-   [ ] Permite publicar notícias e artigos sobre jogos e campeonatos;
 
-In the project directory, you can run:
+## ✨ Tecnologias
+-   [ ] React 
+-   [ ] Typescript
+-   [ ] Context API
+-   [ ] Firebase database
+-   [ ] Google Fonts "Roboto"
+-   [ ] Sass
+-   [ ] React Router Dom
+-   [ ] Github Copilot
 
-### `yarn start`
+## Executando o projeto
+Utilize o **yarn** ou o **npm install** para instalar as dependências do projeto.
+Em seguida, inicie o projeto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```cl
+yarn start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Decisões
+-   [ ] Utilizar o React Router Dom para navegação entre as páginas.
+-   [ ] Utilizar o Sass para estilização.
+-   [ ] Utilizar Firebase para autenticação e banco de Dados.
+-   [ ] Utilizar o Context API para passar informações entre as páginas.
+-   [ ] Utilizar o hooks para acessar o banco de dados.
 
-### `yarn test`
+1° passo: Estudos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - Tomar a decisão em utilizar o firebase como banco de dados.
+    - Lê a documentaões do firebase e sabercomo funciona.
+    - Pesquisar sobre features do blog.
+    - Estudar sobre Context Api e Hooks.
+    - Assistir videos gringos sobre firebase.
+    - Rever algumas aulas sobre NLW da Rocketseat. 
 
-### `yarn build`
+2° passo: Desenvolvimento
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - Criar e fazer estilização da tela de login e Autehnticar usando Context Api ao Bando de dados do firebase.
+    - Criar e fazer estilização da tela Home e listar os posts com useState e useEffect do react.
+    - Criar e fazer estilização da tela de Create new Post e salvar cada dados no database do firebase.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3° passo: conclusão
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - Melhorar as estilizaçãoes de todas as pages com Display grid e flexbox.
+    - Criar novos Posts para page de cada campeonato.
+    - verificar e corregir os erros de estilização.
+    - verificar e corregir alguns bugs
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

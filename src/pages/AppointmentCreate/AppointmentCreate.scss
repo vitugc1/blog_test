@@ -3,44 +3,66 @@
 
     form {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        margin-top: 2rem;
+
         
-        input {
-            width: 500px;
-            height: 30px;
-            border: 1px solid #ccc;;
+         input {
+            width: 600px;
+            height: 35px;
+            border: 1px solid #4b204b;;
             margin-top: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
+            color: #4b204b;
+            padding: 0.5rem;
+            margin-top: 2rem;
         }
+
         
-        .image-info {
-            width: 500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            
-        } 
+        
         
         textarea {
-            width: 500px;
+            width: 600px;
             height: 150px;
-            border: 1px solid #ccc;;
+            border: 1px solid #4b204b;;
             margin-top: 20px;
-            border-radius: 5px;
-            margin-top: 1rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            color: #4b204b;
+            padding: 0.5rem;
         }
+
+        .input-date {
+            
+            input {
+                width: 120px;
+                height: 35px;
+                border: 1px solid #4b204b;;
+                
+                border-radius: 10px;
+                color: #4b204b;
+                margin-right: 30rem;
+            }
+        }
+
         button {
             width: 300px;
-            height: 30px;
-            border: 1px solid #ccc;;
-            margin-top: 20px;
-            border-radius: 5px;
-            background-color: #005eff;
+            height: 40px;
+            border: 1px solid #4b204b;;
+            margin-top: 3rem;
+            border-radius: 10px;
+            background-color: #4b204b;
             color: #fff;
             cursor: pointer;
+            transition: 0.7s;
+
+            &:hover {
+                background-color: #7a297a;
+                color: #fff;
+            }
+            
         }
     
     

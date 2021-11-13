@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { CardPost } from '../../components/CardPost/CardPost'
 import { Header } from '../../components/Header/Header'
+import bannerImg from '../../assets/banner.png'
 
 import './Home.scss'
 
@@ -38,19 +39,20 @@ export const Home = () => {
         })
     }, []);
 
-    function navigationToDetails(){
-        history.push(`/DetailsPost${CardPost}`);
-    }
+    
 
     return (
         <div className="Container-Home">
             <Header
                 isChecked={false}
             />
+            <div>
+                <img src={bannerImg} alt="" />
+            </div>
             <div className="Posts">
+            
             {post ? post.map(posts => (
                     <div
-                        onClick={navigationToDetails}
                         className="Post"
                         key={posts.id}
                     >

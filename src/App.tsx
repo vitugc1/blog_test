@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Signin } from './pages/Signin/Signin';
 import { Home } from './pages/Home/Home';
 import { AppointmentCreate } from './pages/AppointmentCreate/AppointmentCreate';
-import { AppointmentDetails } from './pages/AppointmentDetails/AppointmentDetails';
+
 import { AuthContextProvider } from './context/AuthContext';
 
 export const App = () => {
@@ -13,7 +13,6 @@ export const App = () => {
         <Switch>
           <Route path="/" exact component={Signin} />
           <Route path="/home" component={Home} />
-          <Route path="/DetailsPost/:id" component={AppointmentDetails} />
           <Route path="/CreatePost" component={AppointmentCreate} />
         </Switch>
       </AuthContextProvider>
