@@ -4,22 +4,17 @@
     .Posts {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 9.5rem;
+        gap: 4.29rem;
+        margin-bottom: 3rem;
         
         
         .Post {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ccc;
             border-radius: 0.5rem;
-            padding: 1rem;
-            margin: 1rem;
+            margin: 0.8rem;
+            
             background-color: #fff;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
             transition: all 0.2s ease-in-out;
-            
             
 
             &:hover {

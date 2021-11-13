@@ -13,8 +13,8 @@ export const App = () => {
         <Switch>
           <Route path="/" exact component={Signin} />
           <Route path="/home" component={Home} />
+          <Route path="/DetailsPost/:id" component={AppointmentDetails} />
           <Route path="/CreatePost" component={AppointmentCreate} />
-          <Route path="/DetailsPost" component={AppointmentDetails} />
         </Switch>
       </AuthContextProvider>
     </BrowserRouter>

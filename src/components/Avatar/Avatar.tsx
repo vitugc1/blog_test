@@ -7,8 +7,7 @@ type Props = {
 export const Avatar = ({urlImage}: Props) => {
     return (
         <div className="avatar">
-            <img src={urlImage} alt="avatar" />
-            
+            <img src={urlImage} alt="" />
         </div>
     )
 }

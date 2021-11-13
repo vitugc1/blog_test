@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { firebase } from '../../services/firabase';
 import { useHistory } from 'react-router-dom';
 
 import { CardPost } from '../../components/CardPost/CardPost'
@@ -5,38 +7,39 @@ import { Header } from '../../components/Header/Header'
 
 import './Home.scss'
 
+type PostCard ={
+    id: string;
+    title: string;
+    date: string;
+    image: string;
+    description: string;
+}
+
 export const Home = () => {
     const history = useHistory();
+    const [post, setPost] =useState<PostCard[]>([]);
 
-    const result = [
-        {
-            id: 1,
-        },
-        {
-            id: 2,
-        },
-        {
-            id: 3,
-        },
-        {
-            id: 4,
-        },
-        {
-            id: 5,
-        },
-        {
-            id: 6,
-        },
-        {
-            id: 7,
-        },
-        {
-            id: 8,
-        }
-    ]
+    useEffect(() => {
+        const postsRef = firebase.database().ref('posts');
+
+        postsRef.on('value', (snapshot) => {
+
+            const posts = snapshot.val();
+            const parsedPost = Object.keys(posts).map((key) => {
+                return {
+                    id: key,
+                    title: posts[key].title,
+                    date: posts[key].date,
+                    image: posts[key].image,
+                    description: posts[key].description
+                }
+            })
+            setPost(parsedPost);
+        })
+    }, []);
 
     function navigationToDetails(){
-        history.push('/DetailsPost');
+        history.push(`/DetailsPost${CardPost}`);
     }
 
     return (
@@ -45,22 +48,20 @@ export const Home = () => {
                 isChecked={false}
             />
             <div className="Posts">
-            {result.map(item => (
-                <div 
-                    onClick={navigationToDetails}
-                    className="Post"
-                    key={item.id}   
-                >
+            {post ? post.map(posts => (
+                    <div
+                        onClick={navigationToDetails}
+                        className="Post"
+                        key={posts.id}
+                    >
                         <CardPost
-                            
-                            urlImage='https://img.freepik.com/fotos-gratis/3d-rendem-de-uma-mesa-de-madeira-com-uma-imagem-defocussed-de-um-barco-em-um-lago_1048-3432.jpg?size=626&ext=jpg'
-                            date="10.11.2021"
-                            title="Jogos de Hoje"
-                            description="Hoje teve um campeonato"
-                        />
-                </div>
-                
-            ))}
+                            title={posts.title}
+                            urlImage={posts.image}
+                            date={posts.date}
+                            description={posts.description}
+                            />
+                    </div>
+            )): ''}
             </div>
         </div>
     )
