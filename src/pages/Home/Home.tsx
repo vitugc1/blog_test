@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { firebase } from '../../services/firabase';
-import { useHistory } from 'react-router-dom';
 
 import { CardPost } from '../../components/CardPost/CardPost'
 import { Header } from '../../components/Header/Header'
@@ -17,7 +16,6 @@ type PostCard ={
 }
 
 export const Home = () => {
-    const history = useHistory();
     const [post, setPost] =useState<PostCard[]>([]);
 
     useEffect(() => {

@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 export const AppointmentCreate = () => {
     const history = useHistory();
-    const [title, settitle] = useState('');
+    const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
     const [image, setImage] = useState('');
     const [description, setDescription] = useState('')
@@ -41,7 +41,7 @@ export const AppointmentCreate = () => {
                     <input 
                         type="text" 
                         placeholder="Digite o titulo do post"
-                        onChange={event => settitle(event.target.value)}
+                        onChange={event => setTitle(event.target.value)}
                         value={title}
                     />
                     
