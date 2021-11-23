@@ -1,25 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@500&display=swap');
+
 section {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     height: 100vh;
-    background: #111111;
+    
 
-    main {
+    aside {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(0deg, #331933 0%, #000100 100%);
+        border-radius: 0px 64px 0px 0px;
+
+        flex: 1;
         display: flex;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
         
-        
+
+        img {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin-bottom: 10rem;
+        }
+        strong {
+            margin-top: 15rem;
+            position: absolute;
+            margin-left: 30px;
+            font-size: 40px;
+            color: #f0ddee;
+            max-width: 550px;
+            font-family: 'Roboto Mono', monospace;
+            
+        }
+        @media (max-width: 1400px) {
+            strong {
+                font-size: 30px;
+                max-width: 300px;
+            }
+         }
+
+        @media (max-width: 1200px) {
+           display: none;
+        }
+
+    }
+    .content {
+        margin-bottom: 10rem;
+        padding: 10px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .logo {
+            
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
         .text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
+            margin-left: 60px;
+            
+            font-weight: bold;
             font-size: 30px;
-            color: #708090;
+            color: #4b204b;
+            max-width: 400px;
             
             
-            @media (max-width: 500px) {
+            @media (max-width: 728px) {
                 font-size: 18px;
                 font-weight: 500;
             }
@@ -30,24 +86,8 @@ section {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
-
+            margin-top: 50px;
             
-
-            &::before {
-                content: '';
-                flex: 1;
-                height: 1px;
-                background: #a8a8b3;
-                margin-right: 16px;
-            }
-            &::after {
-                content: '';
-                flex: 1;
-                height: 1px;
-                background: #a8a8b3;
-                margin-left: 16px;
-            }
         }
     }
 }

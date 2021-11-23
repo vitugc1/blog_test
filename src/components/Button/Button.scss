@@ -1,13 +1,13 @@
 .Button {
-    width: 220px;
-    height: 43px;
+    width: 300px;
+    height: 50px;
 
     border-radius: 10px;
     border: 1px solid;
     border-color: #e5e5e5;
 
     transition: all 0.7s;
-    background: #ff2400;
+    background: #8a2be2;
     color: #fff;
     cursor: pointer;
 
@@ -21,5 +21,6 @@
     }
     @media (max-width: 500px) {
         width: 180px;
+        height: 40px;
     }
 }

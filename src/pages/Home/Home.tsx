@@ -3,7 +3,7 @@ import { firebase } from '../../services/firabase';
 
 import { CardPost } from '../../components/CardPost/CardPost'
 import { Header } from '../../components/Header/Header'
-import bannerImg from '../../assets/banner.png'
+
 
 import './Home.scss'
 
@@ -45,7 +45,7 @@ export const Home = () => {
                 isChecked={false}
             />
             <div>
-                <img src={bannerImg} alt="" />
+                
             </div>
             <div className="Posts">
             
