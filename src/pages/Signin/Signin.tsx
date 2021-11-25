@@ -26,7 +26,7 @@ export const Signin = () => {
         <section>
             <aside>
                 <img src={bannerSvg} alt="" />
-                <strong>Visualize é crie seus posts para o mundo todo.</strong>
+                <strong>Crie seus posts para o mundo todo.</strong>
             </aside>
 
             <div className="content">
@@ -34,8 +34,7 @@ export const Signin = () => {
                     <img src={logoSvg} alt="" />
                 </div>
                 <div className="text">
-                    <div>Bem-vindo, faça login é comece a criar seus posts.</div>
-                    <div></div>
+                    <div>Bem-vindo, faça seu login e comece a criar seus posts.</div>
                 </div>
                 <div className="button">
                     <Button

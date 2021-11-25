@@ -49,7 +49,7 @@ export const Home = () => {
             </div>
             <div className="Posts">
             
-            {post ? post.map(posts => (
+            {post.map(posts => (
                     <div
                         className="Post"
                         key={posts.id}
@@ -61,7 +61,7 @@ export const Home = () => {
                             description={posts.description}
                             />
                     </div>
-            )): ''}
+            ))}
             </div>
         </div>
     )

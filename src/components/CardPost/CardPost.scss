@@ -1,72 +1,87 @@
 .Card {
-    width: 100%;
-    height: 800px;
-    position: relative;
-    background-color: #f5f5f5;
+    width: 600px;
+    height: 150px;
+    border: 1px solid #803790;
+    background-color: #fff;
     border-radius: 10px;
-    
+    border: 2px solid #be7abb;
     overflow: hidden;
+    position: relative;
     
 
      .Card-content {
         width: 100%;
         height: 100%;
+        display: flex;
+        padding: 0.2rem 0.3rem;
+        background-color: #803790;
         
-        margin-top: 0.5rem;
         
-        
-        .Card-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .content-left {
+            flex: 1;
+
             img {
-                width: 98%;
-                height: 500px;
+                width: 150px;
+                height: 120px;
+                object-fit: cover;
                 border-radius: 10px;
             }
-        }
 
-        .Card-title {
-            margin-left: 3rem;
-            margin-top: 0.3rem;
-
-            span {
-                font-size: 30px;
-                font-weight: 700;
-                display: flex;
-                margin-left: 1rem;
-                
-                text-decoration: none;
-                color: #8a2be2;
-                padding-top: 10px;
-
-                
-            }
-        }
-
-        .Card-description {
-            margin-top: 1rem;
-            p {
-                font-size: 15px;
-                font-weight: 500;
-                margin-left: 1rem;
-                margin-top: 10px;
-                max-width: 850px;
-                color: #341933;
-                
-            }
-        }
-
-        .Card-date {
-            position: absolute;
-            bottom: 0;
             h3 {
-                font-size: 13px;
-                font-weight: 500;
-                margin-left: 1rem;
-                color: #8a2be2;
+                font-size: 10px;
+                color: #e0bcdd;
+                
             }
         }
+        .content-right {
+            flex: 2.5;
+
+            >div {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                span {
+                    font-size: 20px;
+                    color: #fff;
+                    font-weight: bold;
+                }
+
+                >div {
+                    position: absolute;
+                    right: 0.8rem;
+                    display: flex;
+                    gap: 0.5rem;
+
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: bold;
+                        margin-left: 1rem;
+                        display: flex;
+                        flex-direction: row;
+    
+    
+                        
+    
+                        &:hover {
+                            color: #e0bcdd;
+                            transition: 0.7s;
+                        }
+                    }
+                }
+
+            }
+
+
+            p {
+                font-size: 12px;
+                color: #e0bcdd;
+            }
+
+            
+        }
+        
         
     } 
     
