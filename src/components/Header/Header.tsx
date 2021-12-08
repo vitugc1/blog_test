@@ -20,7 +20,7 @@ export const Header = ({ isChecked }:Props) => {
             
             <div className="content-ancoras">
                 
-                { isChecked ? <a href="/home">Home</a> : <a href="/createpost">Create Post</a> } 
+                { isChecked ? <a href="/home">Home</a> : <a href="/post/create">Create Post</a> } 
             </div>
             
         </div>

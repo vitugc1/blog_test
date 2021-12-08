@@ -46,30 +46,6 @@
                     font-weight: bold;
                 }
 
-                >div {
-                    position: absolute;
-                    right: 0.8rem;
-                    display: flex;
-                    gap: 0.5rem;
-
-                    a {
-                        text-decoration: none;
-                        color: #fff;
-                        font-size: 15px;
-                        font-weight: bold;
-                        margin-left: 1rem;
-                        display: flex;
-                        flex-direction: row;
-    
-    
-                        
-    
-                        &:hover {
-                            color: #e0bcdd;
-                            transition: 0.7s;
-                        }
-                    }
-                }
 
             }
 

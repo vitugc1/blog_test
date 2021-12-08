@@ -19,7 +19,7 @@ export const Signin = () => {
             await signInWithGoogle();
         }
 
-        history.push('/Home');
+        history.push('/home');
     }
 
     return (

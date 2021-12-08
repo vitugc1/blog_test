@@ -1,67 +1,54 @@
-import { useEffect, useState } from 'react';
-import { firebase } from '../../services/firabase';
-
+import { useHistory, useParams } from 'react-router'
 import { CardPost } from '../../components/CardPost/CardPost'
 import { Header } from '../../components/Header/Header'
-
+import {  usePost } from '../../hooks/usePost'
 
 import './Home.scss'
 
-type PostCard ={
-    id: string;
-    title: string;
-    date: string;
-    image: string;
-    description: string;
-}
+
 
 export const Home = () => {
-    const [post, setPost] =useState<PostCard[]>([]);
+    const history = useHistory();
+    const { posts } = usePost()
 
-    useEffect(() => {
-        const postsRef = firebase.database().ref('posts');
-
-        postsRef.on('value', (snapshot) => {
-
-            const posts = snapshot.val();
-            const parsedPost = Object.keys(posts).map((key) => {
-                return {
-                    id: key,
-                    title: posts[key].title,
-                    date: posts[key].date,
-                    image: posts[key].image,
-                    description: posts[key].description
-                }
-            })
-            setPost(parsedPost);
-        })
-    }, []);
-
+    console.log(posts)
     
+    function handleNavigationToDetailsPost() {
+        const itemRef = posts.find(item => item.id)
+
+        history.push(`/post/details/${itemRef?.id}`)
+
+        
+    }
 
     return (
         <div className="Container-Home">
-            <Header
-                isChecked={false}
-            />
             <div>
-                
+                <Header
+                    isChecked={false}
+                />
             </div>
+
+
             <div className="Posts">
-            
-            {post.map(posts => (
+                {posts.map((item) => (
                     <div
                         className="Post"
-                        key={posts.id}
+                        key={item.id}
+                        
                     >
-                        <CardPost
-                            title={posts.title}
-                            urlImage={posts.image}
-                            date={posts.date}
-                            description={posts.description}
+                        <a 
+                            onClick={handleNavigationToDetailsPost}
+                        >
+                            <CardPost
+                                title={item.title}
+                                image={item.image}
+                                date={item.date}
+                                description={item.description}
                             />
+                        </a>
                     </div>
-            ))}
+                ))}
             </div>
         </div>
     )

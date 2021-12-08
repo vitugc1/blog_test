@@ -1,81 +1,83 @@
-import { FormEvent, useState } from 'react'
-import { Header } from '../../components/Header/Header'
-import { database } from '../../services/firabase';
-import './AppointmentCreate.scss'
+import { FormEvent, useRef } from 'react'
 import { useHistory } from 'react-router-dom';
+import { database } from '../../services/firabase';
+import { useAuth } from '../../hooks/useAuth';
 
-export const AppointmentCreate = () => {
+import { Header } from '../../components/Header/Header'
+import './AppointmentCreate.scss'
+
+export function AppointmentCreate() {
     const history = useHistory();
-    const [title, setTitle] = useState('');
-    const [date, setDate] = useState('');
-    const [image, setImage] = useState('');
-    const [description, setDescription] = useState('')
+
+    const titleInputRef = useRef<HTMLInputElement>(null);
+    const imageInputRef = useRef<HTMLInputElement>(null);
+    const dateInputRef = useRef<HTMLInputElement>(null);
+    const descriptionTextAreaRef = useRef<HTMLTextAreaElement>(null);
 
 
-    async function handleCreatePost(event: FormEvent) {
-        event.preventDefault()
 
+    const handleCreatePost = async (event: FormEvent) => {
+        event.preventDefault();
         const postRef = database.ref('posts');
 
-        await postRef.push({
-            title: title,
-            date: date,
-            image: image,
-            description: description
+        const firebasePost = await postRef.push({
+            title: titleInputRef.current?.value,
+            image: imageInputRef.current?.value,
+            date: dateInputRef.current?.value,
+            description: descriptionTextAreaRef.current?.value,
         });
-        
-        history.push(`/home`);
+
+        history.push(`/post/details/${firebasePost.key}`);
     }
 
     return (
         <div>
-            <Header
-                isChecked={true}
-            />
-            <div className="form-info">
-                <form 
-                    onSubmit={handleCreatePost}
-                    
-                >
-                    
-                    <input 
-                        type="text" 
-                        placeholder="Digite o titulo do post"
-                        onChange={event => setTitle(event.target.value)}
-                        value={title}
-                    />
-                    
-                    
-                    
-                    <input 
-                        
-                        type="url" 
-                        placeholder="Digite URL da imagem" 
-                        onChange={event => setImage(event.target.value)}
-                        value={image}
-                    />
-                    <div className="input-date">
-                        <input 
-                            type="date"
-                            onChange={event => setDate(event.target.value)}
-                            value={date}
-                        />
-                    </div>
-                    
-                    <textarea
-                        onChange={event => setDescription(event.target.value)}
-                        value={description}
-                    />
-                    
 
-                    <button type="submit">
-                        Create new post
-                    </button>
+        <Header
+            isChecked={true}
+        />
 
-                </form>
-            </div>
+        <div className="form-info">
+            <form 
+                onSubmit={handleCreatePost}
+                
+            >
+                <input
+                    ref={titleInputRef}
+                    type="text" 
+                    placeholder="Digite o título do post"
+                />
+
+                <input
+                    ref={imageInputRef}
+                    type="url" 
+                    placeholder="Digite a url da imagem"
+                />
+
+                <div>
+                    <input
+                        ref={dateInputRef}
+                        type="date"
+                        placeholder="Digite a data do post"
+                    />
+                </div>
+
+                <textarea
+                    ref={descriptionTextAreaRef}
+                    placeholder="Digite a descrição do post"
+                />
+                
+
+                <button type="submit">
+                    Create new post
+                </button>
+
+            </form>
         </div>
+    </div>
     )
-}
+};
+
+
 
 
