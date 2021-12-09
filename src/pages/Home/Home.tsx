@@ -1,4 +1,4 @@
-import { useHistory, useParams } from 'react-router'
+import { useHistory } from 'react-router'
 import { CardPost } from '../../components/CardPost/CardPost'
 import { Header } from '../../components/Header/Header'
 import {  usePost } from '../../hooks/usePost'
@@ -6,19 +6,14 @@ import {  usePost } from '../../hooks/usePost'
 import './Home.scss'
 
 
-
 export const Home = () => {
     const history = useHistory();
     const { posts } = usePost()
-
-    console.log(posts)
     
-    function handleNavigationToDetailsPost() {
-        const itemRef = posts.find(item => item.id)
+    function handleNavigationToDetailsPost(id: string) {
+        const itemRef = posts.find(item => item.id === id)
 
         history.push(`/post/details/${itemRef?.id}`)
-
-        
     }
 
     return (
@@ -35,18 +30,15 @@ export const Home = () => {
                     <div
                         className="Post"
                         key={item.id}
-                        
+                        onClick={() => handleNavigationToDetailsPost(item.id)}
                     >
-                        <a 
-                            onClick={handleNavigationToDetailsPost}
-                        >
-                            <CardPost
+                        <CardPost
                                 title={item.title}
                                 image={item.image}
                                 date={item.date}
                                 description={item.description}
-                            />
-                        </a>
+                        />
+                        
                     </div>
                 ))}
             </div>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { database } from '../services/firabase';
-import { useAuth } from './useAuth';
 
 type PostCard = {
     id: string;
@@ -30,6 +29,7 @@ export const usePost = () => {
             })
             setPosts(parsedPost);
         })
+        
         return () => {
             postsRef.off('value');
         }

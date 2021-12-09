@@ -1,7 +1,6 @@
 import { FormEvent, useRef } from 'react'
 import { useHistory } from 'react-router-dom';
 import { database } from '../../services/firabase';
-import { useAuth } from '../../hooks/useAuth';
 
 import { Header } from '../../components/Header/Header'
 import './AppointmentCreate.scss'

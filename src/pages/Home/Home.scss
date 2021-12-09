@@ -15,10 +15,7 @@
         
         .Post {
             transition: all 0.2s ease-in-out;
-            a {
-                cursor: pointer;
-                
-            }
+            cursor: pointer;
 
             &:hover {
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
