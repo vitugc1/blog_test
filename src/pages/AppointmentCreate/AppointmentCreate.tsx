@@ -4,8 +4,10 @@ import { database } from '../../services/firabase';
 
 import { Header } from '../../components/Header/Header'
 import './AppointmentCreate.scss'
+import { useAuth } from '../../hooks/useAuth';
 
 export function AppointmentCreate() {
+    const { user } = useAuth();
     const history = useHistory();
 
     const titleInputRef = useRef<HTMLInputElement>(null);
@@ -17,6 +19,11 @@ export function AppointmentCreate() {
 
     const handleCreatePost = async (event: FormEvent) => {
         event.preventDefault();
+
+        if(!user) {
+            throw new Error('Faça login');
+        }
+
         const postRef = database.ref('posts');
 
         const firebasePost = await postRef.push({
@@ -28,6 +35,8 @@ export function AppointmentCreate() {
 
         history.push(`/post/details/${firebasePost.key}`);
     }
+
+    
 
     return (
         <div>
@@ -67,8 +76,11 @@ export function AppointmentCreate() {
                 />
                 
 
-                <button type="submit">
-                    Create new post
+                <button
+                    disabled={!user}
+                    type="submit"
+                >
+                    Criar post
                 </button>
 
             </form>

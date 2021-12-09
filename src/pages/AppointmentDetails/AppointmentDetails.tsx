@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { Header } from '../../components/Header/Header';
+import { useAuth } from '../../hooks/useAuth';
 import { usePost } from '../../hooks/usePost';
 
 type PostParms = {
@@ -7,11 +8,15 @@ type PostParms = {
 }
 
 export const AppointmentDetails = () => {
+    const { user } = useAuth();
     const params = useParams<PostParms>();
     const postsId = params.id;
     const { posts } = usePost()
 
     const itemRef = posts.find(post => post.id === postsId);
+    if(!user) {
+        throw new Error('Faça login');
+    }
 
     return (
         <div>
