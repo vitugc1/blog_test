@@ -7,9 +7,8 @@ import './AppointmentCreate.scss'
 import { useAuth } from '../../hooks/useAuth';
 
 export function AppointmentCreate() {
-    const { user } = useAuth();
     const history = useHistory();
-
+    const { user } = useAuth();
     const titleInputRef = useRef<HTMLInputElement>(null);
     const imageInputRef = useRef<HTMLInputElement>(null);
     const dateInputRef = useRef<HTMLInputElement>(null);
@@ -19,10 +18,6 @@ export function AppointmentCreate() {
 
     const handleCreatePost = async (event: FormEvent) => {
         event.preventDefault();
-
-        if(!user) {
-            throw new Error('Faça login');
-        }
 
         const postRef = database.ref('posts');
 

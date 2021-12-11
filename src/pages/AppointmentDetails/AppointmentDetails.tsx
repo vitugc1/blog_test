@@ -1,22 +1,19 @@
 import { useParams } from 'react-router-dom';
 import { Header } from '../../components/Header/Header';
-import { useAuth } from '../../hooks/useAuth';
 import { usePost } from '../../hooks/usePost';
+
+import './AppointmentDetails.scss';
 
 type PostParms = {
     id: string;
 }
 
 export const AppointmentDetails = () => {
-    const { user } = useAuth();
     const params = useParams<PostParms>();
     const postsId = params.id;
-    const { posts } = usePost()
+    const { posts } = usePost();
 
     const itemRef = posts.find(post => post.id === postsId);
-    if(!user) {
-        throw new Error('Faça login');
-    }
 
     return (
         <div>
@@ -25,7 +22,7 @@ export const AppointmentDetails = () => {
                     isChecked={true}
                 />
             </div>
-            <div>
+            <div className="content-details">
                 <img src={itemRef?.image} alt="" />
                 <h1>{itemRef?.title}</h1>
                 <p>{itemRef?.description}</p>

@@ -1,25 +1,19 @@
 import { useHistory } from 'react-router'
 import { CardPost } from '../../components/CardPost/CardPost'
 import { Header } from '../../components/Header/Header'
-import { useAuth } from '../../hooks/useAuth'
 import {  usePost } from '../../hooks/usePost'
 
 import './Home.scss'
 
 
 export const Home = () => {
-    const { user } = useAuth();
     const history = useHistory();
     const { posts } = usePost()
     
-    function handleNavigationToDetailsPost(id: string) {
-        const itemRef = posts.find(item => item.id === id)
+    function handleNavigationToDetailsPost(postsId: string) {
+        const itemRef = posts.find(item => item.id === postsId)
 
         history.push(`/post/details/${itemRef?.id}`)
-    }
-
-    if(!user) {
-        throw new Error('Faça login');
     }
 
     return (

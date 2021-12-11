@@ -25,7 +25,7 @@
         
         textarea {
             width: 600px;
-            height: 150px;
+            height: 250px;
             border: 1px solid #4b204b;;
             margin-top: 20px;
             border-radius: 10px;
@@ -50,16 +50,16 @@
         button {
             width: 300px;
             height: 40px;
-            border: 1px solid #4b204b;;
+            border: 1px solid #000100;
             margin-top: 3rem;
             border-radius: 10px;
-            background-color: #4b204b;
+            background-color: #7a297a;
             color: #fff;
             cursor: pointer;
             transition: 0.7s;
 
             &:hover {
-                background-color: #7a297a;
+                background-color: #4b204b;
                 color: #fff;
             }
             

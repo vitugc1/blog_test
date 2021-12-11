@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth';
 import { Avatar } from '../Avatar/Avatar';
 import './Header.scss';
@@ -15,12 +16,18 @@ export const Header = ({ isChecked }:Props) => {
                 <Avatar
                     urlImage={user?.avatar}
                 />
-                Olá, {user?.name}
+
+                <div>
+                    Olá,
+                    <span> {user?.name}</span>
+                </div>
+                
+                     
             </div>
             
             <div className="content-ancoras">
                 
-                { isChecked ? <a href="/home">Home</a> : <a href="/post/create">Create Post</a> } 
+                { isChecked ? <Link className="ancora-1" to="/home">Home</Link> : <Link className="ancora-1" to="/post/create">Criar Post</Link> } 
             </div>
             
         </div>

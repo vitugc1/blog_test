@@ -14,9 +14,21 @@
     .content-avatar {
         display: flex;
         align-items: center;
-        color: #fff;
-        font-size: 17px;
+        
+        
         font-weight: bold;
+
+        >div {
+            font-size: 17px;
+            color: #a9a9a9;
+
+            span {
+                font-weight: 400;
+                color: #fff;
+                font-size: 15px;
+            }
+        }
+
 
         @media (max-width: 768px) {
             font-size: 13px;
@@ -27,26 +39,27 @@
 
     .content-ancoras {
         
-        a {
+        .ancora-1, .ancora-2 {
             background-color: #803790;
             padding: 0.4rem 1rem;
             font-size: 17px;
-            font-weight: bold;
             border: 1px solid #be7abb;
             color: #fff;
+            
             border-radius: 5px;
             text-decoration: none;
             margin-left: 20px;
             transition: all 0.7s;
-    
             &:hover {
-                filter: brightness(0.7);
+                filter: brightness(0.8);
                 
             }
             @media (max-width: 760px) {
                 font-size: 13px;
             }
+        
         }
+    
     
         @media (max-width: 760px) {
             height: 60px;

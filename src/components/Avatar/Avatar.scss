@@ -2,17 +2,18 @@
     width: 40px;
     height: 40px;
     border-radius: 8px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 22px;
+    margin-right: 10px;
     border-radius: 50%;
     border: 1px solid;
     border: 1px solid #be7abb;
     overflow: hidden;
 
     img {
-        width: 46px;
-        height: 46px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         
     }
