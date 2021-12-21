@@ -3,10 +3,11 @@ import { useHistory } from 'react-router-dom';
 import { database } from '../../services/firabase';
 
 import { Header } from '../../components/Header/Header'
-import './AppointmentCreate.scss'
 import { useAuth } from '../../hooks/useAuth';
 
-export function AppointmentCreate() {
+import './AppointmentCreate.scss'
+
+export const AppointmentCreate = () => {
     const history = useHistory();
     const { user } = useAuth();
     const titleInputRef = useRef<HTMLInputElement>(null);
@@ -16,7 +17,7 @@ export function AppointmentCreate() {
 
 
 
-    const handleCreatePost = async (event: FormEvent) => {
+    async function handleCreatePost(event: FormEvent){
         event.preventDefault();
 
         const postRef = database.ref('posts');
@@ -36,9 +37,9 @@ export function AppointmentCreate() {
     return (
         <div>
 
-        <Header
-            isChecked={true}
-        />
+            <Header
+                isChecked={true}
+            />
 
         <div className="form-info">
             <form 

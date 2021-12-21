@@ -6,6 +6,7 @@ import { AppointmentCreate } from '../pages/AppointmentCreate/AppointmentCreate'
 import { AppointmentDetails } from '../pages/AppointmentDetails/AppointmentDetails';
 
 export const Routes = () => {
+
     return (
         <Switch>
           <Route path="/" exact component={Signin} />
