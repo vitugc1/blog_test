@@ -9,8 +9,7 @@ type Props = {
 
 
 export const CardPost = ({ image, date, title, description}: Props) => {
-
-
+    
     if(description.length > 400) {
         description = description.substring(0, 400) + '...';
     }

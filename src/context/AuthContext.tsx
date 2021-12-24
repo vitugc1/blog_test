@@ -6,6 +6,7 @@ type User = {
     id: string;
     name: string;
     avatar: string;
+    email: string | null;
 }
   
 type AuthContextType = {
@@ -34,7 +35,8 @@ export function AuthContextProvider({children}:AuthContextProviderProps){
           setUser({
             id: uid,
             name: displayName,
-            avatar: photoURL
+            avatar: photoURL,
+            email: user.email
           })
         }
       })
@@ -58,7 +60,8 @@ export function AuthContextProvider({children}:AuthContextProviderProps){
           setUser({
             id: uid,
             name: displayName,
-            avatar: photoURL
+            avatar: photoURL,
+            email: result.user.email
           })
         }
       
