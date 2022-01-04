@@ -1,9 +1,11 @@
+import { useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth';
 
 import { Avatar } from '../Avatar/Avatar';
-import logoSvg from '../../assets/logo.svg';
+import ModalLogin, { ModalHandles } from '../ModalLogin/ModalLogin';
 
+import logoSvg from '../../assets/logo.svg';
 import './Header.scss';
 
 type Props = {
@@ -11,7 +13,12 @@ type Props = {
 }
 
 export const Header = ({ isChecked }:Props) => {
+    const modalRef = useRef<ModalHandles>(null)
     const { user } = useAuth();
+
+    const handleOpenModal = useCallback(() => {
+        modalRef.current?.openModal();
+    }, [])
  
     return (
         <div className="content-header">
@@ -30,9 +37,8 @@ export const Header = ({ isChecked }:Props) => {
 
                 <div className="content-user">
                     {!user ? (
-                        <Link className="ancora-2" to="/">Login</Link>
+                        <Link to="/signin" className="ancora-2">Login</Link>
                     ) : (
-                        
                         <Avatar
                             urlImage={user?.avatar}
                         />

@@ -15,24 +15,17 @@ export const AppointmentCreate = () => {
     const dateInputRef = useRef<HTMLInputElement>(null);
     const descriptionTextAreaRef = useRef<HTMLTextAreaElement>(null);
 
-
-
     async function handleCreatePost(event: FormEvent){
         event.preventDefault();
-
         const postRef = database.ref('posts');
-
         const firebasePost = await postRef.push({
             title: titleInputRef.current?.value,
             image: imageInputRef.current?.value,
             date: dateInputRef.current?.value,
             description: descriptionTextAreaRef.current?.value,
         });
-
         history.push(`/post/details/${firebasePost.key}`);
     }
-
-    
 
     return (
         <div>

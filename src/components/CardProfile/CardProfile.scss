@@ -1,0 +1,46 @@
+.content-card-profile {
+    position: relative;
+    width: 320px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #221493;
+    overflow: hidden;
+    
+
+    >img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid #221493;
+        margin-top: -150px;
+        color: #808080;
+        
+    }
+
+    >strong {
+        font-size: 26px;
+        color: #808080;
+        margin-top: 1rem;
+    }
+
+    >span {
+        font-size: 18px;
+        color: #808080;
+        margin-top: 0.5rem;
+    }
+    .content-footer {
+        position: absolute;
+        width: 330px;
+        height: 140px;
+        background-image: linear-gradient(to right, #3C8AE3, #221493 70%);
+        border-radius: 0 0 10px 10px;
+        margin-top: 21rem;
+    }
+}

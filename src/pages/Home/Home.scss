@@ -5,23 +5,38 @@ main {
     >div {
         display: flex;
         flex-direction: row;
+        gap: 1rem;
 
         .content-profile {
-            flex: 1;
+            max-width: 320px;
+            max-height: 400px;
+
+            flex: 0.5;
+            display: flex;
+            justify-content: flex-end;
+
+            margin-left: 20rem;
+            margin-top: 1rem;
+            transition: all 0.2s ease-in-out;
 
             @media (max-width: 1200px) {
                 display: none;
              }
+
+             &:hover {
+                
+                box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+                    
+            }
+
             
         }
 
         .content-list {
             width: 100%;
             flex: 1;
-            padding-top: 1rem;
-            
             .content-post {
-                width: 50%;
+                width: 47%;
                 margin-top: 1rem;
                 transition: all 0.2s ease-in-out;
                 cursor: pointer;

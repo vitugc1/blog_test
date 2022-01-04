@@ -9,7 +9,6 @@ type PostCard = {
     description: string;
 }
 
-
 export const usePost = () => {
     const [posts, setPosts] =useState<PostCard[]>([]);
     
@@ -18,7 +17,7 @@ export const usePost = () => {
         
         postsRef.on('value', (snapshot) => {
             const databasePosts = snapshot.val();
-            const parsedPost = Object.keys(databasePosts).map((key) => {
+            const parsedPost = Object.keys(databasePosts).map((key, value) => {
                 return {
                     id: key,
                     title: databasePosts[key].title,
