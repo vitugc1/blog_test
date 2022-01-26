@@ -13,12 +13,15 @@ export const Home = () => {
     const history = useHistory();
     const { posts } = usePost();
     const { user } = useAuth();
+
+    
     
     function handleNavigationToDetailsPost(postsId: string) {
-        const itemRef = posts.find(item => item.id === postsId)
 
-        history.push(`/post/details/${itemRef?.id}`)
+        history.push(`/post/details/${postsId}`)
     }
+
+    
 
     return (
         <main>

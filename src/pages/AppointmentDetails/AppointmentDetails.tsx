@@ -15,6 +15,10 @@ export const AppointmentDetails = () => {
 
     const itemRef = posts.find(post => post.id === postsId);
 
+    if(!itemRef) {
+        return <div>Loading...</div>
+    }
+
     return (
         <div>
             <div>
